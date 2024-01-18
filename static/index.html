@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>My Apps</title>
+        <link rel="icon" type="image/x-icon" href="https://assets-global.website-files.com/5d6db64572061db9c481aaeb/60df10e6f5ffea4eace64375_classlink-favicon.png">
+    </head>
+    
+    <body>
+        <h1 style="flex-direction:column;">
+            Unblocked Chrome URLs 
+
+
+            <p>CSS is coming soon!</p>
+        </h1>
+
+        <form onsubmit="submit()">
+            <label for="url">URL</label>
+            <input class="url" id="url">
+        </form>
+
+        <script>
+            function submit(){const iFrame=`<iframe style="width:100%;height:100%;" src="${document.querySelector('body form input.url').value}"></iframe>`;document.createElement(iFrame);};
+        </script>
+    </body>
+</html>
