@@ -21,15 +21,14 @@
             <input class="url" id="url">
         </form>
 
+        <div id="iframeContainer"></div>
+
         <script>
             function submit(event) {
                 event.preventDefault();
                 const url = document.querySelector('body form input.url').value;
-                const iframe = document.createElement('iframe');
-                iframe.style.width = '100%';
-                iframe.style.height = '100%';
-                iframe.src = url; // Set the src directly without modifications
-                document.body.appendChild(iframe);
+                const iframeContainer = document.getElementById('iframeContainer');
+                iframeContainer.innerHTML = `<iframe style="width:100%;height:100%;" src="${url}"></iframe>`;
             }
         </script>
     </body>
