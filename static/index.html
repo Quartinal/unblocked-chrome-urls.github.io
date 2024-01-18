@@ -9,20 +9,28 @@
     </head>
     
     <body>
-        <h1 style="flex-direction:column;">
-            Unblocked Chrome URLs 
-
-
+        <div style="flex-direction: column;">
+            <h1>
+                Unblocked Chrome URLs 
+            </h1>
             <p>CSS is coming soon!</p>
-        </h1>
+        </div>
 
-        <form onsubmit="submit()">
+        <form onsubmit="submit(event)">
             <label for="url">URL</label>
             <input class="url" id="url">
         </form>
 
         <script>
-            function submit(){const iFrame=`<iframe style="width:100%;height:100%;" src="${document.querySelector('body form input.url').value}"></iframe>`;document.createElement(iFrame);};
+            function submit(event) {
+                event.preventDefault();
+                const url = document.querySelector('body form input.url').value;
+                const iframe = document.createElement('iframe');
+                iframe.style.width = '100%';
+                iframe.style.height = '100%';
+                iframe.src = url;
+                document.body.appendChild(iframe);
+            }
         </script>
     </body>
 </html>
