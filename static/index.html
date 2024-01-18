@@ -27,8 +27,17 @@
             function submit(event) {
                 event.preventDefault();
                 const url = document.querySelector('body form input.url').value;
+                const iframe = document.createElement('iframe');
+                iframe.style.width = '100%';
+                iframe.style.height = '100%';
+                iframe.src = url;
+
+                // Clear the previous content of the container
                 const iframeContainer = document.getElementById('iframeContainer');
-                iframeContainer.innerHTML = `<iframe style="width:100%;height:100%;" src="${url}"></iframe>`;
+                iframeContainer.innerHTML = '';
+
+                // Append the iframe to the container
+                iframeContainer.appendChild(iframe);
             }
         </script>
     </body>
