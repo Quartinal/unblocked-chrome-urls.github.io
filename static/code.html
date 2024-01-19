@@ -15,17 +15,19 @@
     <body>
         <div style="display:flex;flex-direction:column;">
             <h1>Get Code For Chrome Pages</h1>
-
-            <label for="pagename">Page Name (without <code>chrome://extensions</code>)</label>
-            <input type="text" class="pagename" id="pagename">
-
-            <input type="submit" value="Submit">
-
+    
+            <form>
+                <label for="pagename">Page Name (without <code>chrome://extensions</code>)</label>
+                <input type="text" class="pagename" id="pagename">
+    
+                <input type="submit" value="Submit">
+            </form>
+    
             <hr>
-
+    
             <a href="index.html">Back to other page</a>
         </div>
-
+    
         <script>
             const validValues = [
                 'extensions',
@@ -34,38 +36,42 @@
                 'dino'
                 // More URLs are coming!
             ]
-
+    
             let code
-
-            $('.pagename').on("submit", () => {
-                if ($('.pagename').value == validValues[0]) {
-                    code = 'view-source:chrome://extensions'
-                } else if ($('.pagename').value == validValues[1]) {
-                    code = 'view-source:chrome://settings'
-                } else if ($('.pagename').value == validValues[2]) {
-                    code = 'view-source:chrome://inspect'
-                } else if ($('.pagename').value == validValues[3]) {
-                    code = 'view-source:chrome://dino'
+    
+            $('form').submit((event) => {
+                event.preventDefault();
+                
+                if ($('.pagename').val() == validValues[0]) {
+                    code = 'view-source:chrome://extensions';
+                } else if ($('.pagename').val() == validValues[1]) {
+                    code = 'view-source:chrome://settings';
+                } else if ($('.pagename').val() == validValues[2]) {
+                    code = 'view-source:chrome://inspect';
+                } else if ($('.pagename').val() == validValues[3]) {
+                    code = 'view-source:chrome://dino';
                 }
-
-                $('body div[style="display:flex;flex-direction:column;"]').innerHTML = `
+    
+                $('body div[style="display:flex;flex-direction:column;"]').html(`
                     <h1>Get Code For Chrome Pages</h1>
-
-                    <label for="pagename">Page Name (without <code>chrome://extensions</code>)</label>
-                    <input type="text" class="pagename" id="pagename">
-
-                    <input type="submit" value="Submit again">
-
+    
+                    <form>
+                        <label for="pagename">Page Name (without <code>chrome://extensions</code>)</label>
+                        <input type="text" class="pagename" id="pagename">
+    
+                        <input type="submit" value="Submit again">
+                    </form>
+    
                     <hr>
-
+    
                     <a href="index.html">Back to other page</a>
-
+    
                     <div style="display:flex;flex-direction:row;gap:30px;">
                         <img src="https://bypassi-is-awesome.vercel.app/misc/img/current-channel-logo@2x.png">
-                        <code>${code.value}</code>    
+                        <code>${code}</code>    
                     </div>
-                `
-            })
+                `);
+            });
         </script>
-    </body>
+    </body>    
 </html>
