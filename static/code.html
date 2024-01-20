@@ -40,16 +40,16 @@
             let code
     
             $('form').submit((event) => {
-                event.preventDefault();
+                event.preventDefault()
                 
                 if ($('.pagename').val() == validValues[0]) {
-                    code = 'view-source:chrome://extensions';
+                    code = 'view-source:chrome://extensions'
                 } else if ($('.pagename').val() == validValues[1]) {
-                    code = 'view-source:chrome://settings';
+                    code = 'view-source:chrome://settings'
                 } else if ($('.pagename').val() == validValues[2]) {
-                    code = 'view-source:chrome://inspect';
+                    code = 'view-source:chrome://inspect'
                 } else if ($('.pagename').val() == validValues[3]) {
-                    code = 'view-source:chrome://dino';
+                    code = 'view-source:chrome://dino'
                 }
     
                 $('body div[style="display:flex;flex-direction:column;"]').html(`
@@ -70,8 +70,8 @@
                         <img src="https://bypassi-is-awesome.vercel.app/misc/img/current-channel-logo@2x.png" width="20px" height="20px">
                         <code>${code}</code>    
                     </div>
-                `);
-            });
+                `)
+            })
         </script>
     </body>    
 </html>
