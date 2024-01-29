@@ -5813,8 +5813,7 @@ class ExtensionsPackDialogElement extends PolymerElement{static get is(){return"
 <cr-toolbar page-name="Extensions" search-prompt="Search extensions" clear-label="Clear search" menu-label="Main menu" show-menu autofocus narrow-threshold="1000">
   <div class="more-actions">
     <span id="devModeLabel">Developer mode</span>
-    <cr-tooltip-icon hidden="[[!shouldDisableDevMode_(
-        devModeControlledByPolicy, isChildAccount)]]" tooltip-text="[[getTooltipText_(isChildAccount)]]" icon-class="[[getIcon_(isChildAccount)]]" icon-aria-label="[[getTooltipText_(isChildAccount)]]">
+    <cr-tooltip-icon hidden="false" tooltip-text="[[getTooltipText_(isChildAccount)]]" icon-class="[[getIcon_]]" icon-aria-label="[[getTooltipText_]]">
     </cr-tooltip-icon>
     <cr-toggle id="devMode" on-change="onDevModeToggleChange_" disabled="false" checked="[[inDevMode]]" aria-labelledby="devModeLabel">
     </cr-toggle>
