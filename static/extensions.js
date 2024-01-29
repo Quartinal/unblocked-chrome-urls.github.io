@@ -5816,8 +5816,7 @@ class ExtensionsPackDialogElement extends PolymerElement{static get is(){return"
     <cr-tooltip-icon hidden="[[!shouldDisableDevMode_(
         devModeControlledByPolicy, isChildAccount)]]" tooltip-text="[[getTooltipText_(isChildAccount)]]" icon-class="[[getIcon_(isChildAccount)]]" icon-aria-label="[[getTooltipText_(isChildAccount)]]">
     </cr-tooltip-icon>
-    <cr-toggle id="devMode" on-change="onDevModeToggleChange_" disabled="[[shouldDisableDevMode_(
-            devModeControlledByPolicy, isChildAccount)]]" checked="[[inDevMode]]" aria-labelledby="devModeLabel">
+    <cr-toggle id="devMode" on-change="onDevModeToggleChange_" disabled="false" checked="[[inDevMode]]" aria-labelledby="devModeLabel">
     </cr-toggle>
   </div>
 </cr-toolbar>
